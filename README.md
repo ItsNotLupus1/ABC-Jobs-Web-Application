@@ -1,0 +1,2 @@
+# ABC-Jobs-Web-Application
+ABC Jobs is a Job Portal which allows users to register in the portal using the Registration Page. Users of the portal can search for other users using various parameters such as First Name, Last Name, Company Name, City &amp; Country. Users will be able to view the Public Profile of users after searching them. The portal allow users to login, request for forgotten password and Update their profile information
