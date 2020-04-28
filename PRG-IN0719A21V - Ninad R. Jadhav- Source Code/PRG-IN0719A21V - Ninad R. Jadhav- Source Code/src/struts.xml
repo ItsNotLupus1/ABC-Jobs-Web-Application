@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="default" extends="struts-default">
+
+<action name="index">
+<result>/index.jsp</result>
+</action>
+
+<action name="registeruser" class="com.Final.RegisterAction">
+<result name="register">ThankYou.jsp</result>
+<result name="backRegister">register.jsp</result>
+<result name="error">/RError.jsp</result>
+</action>
+
+<action name="loginuser" class="com.Final.LoginUserAction">
+<result name="login">UserDashboard.jsp</result>
+<result name="backLogin">/Login.jsp</result>
+</action>
+
+<action name="logout" class="com.Final.LoginUserAction" method="logout">
+<result name="logout">/Login.jsp</result>
+</action>
+
+<action name="ViewProfilepls" class="com.Final.ReportAction">
+<result name="REPORT">/ViewProfile.jsp</result>
+<result name="Failure">/Login.jsp</result>
+</action>
+
+<action name="Updates" class="com.Final.ReportAction">
+<result name="REPORT">/Update.jsp</result>
+</action>
+
+<action name="updatespls" class="com.Final.UpdateAction">
+<result name="update" type="chain">ViewProfile</result>
+</action>
+
+<action name="ViewProfile" class="com.Final.ReportAction">
+<result name="REPORT">/ViewProfiles.jsp</result>
+</action>
+
+<action name="SearchUser" class="com.Final.UserListAction" method="search">
+<result name="successful">SearchList.jsp</result>
+<result name="error">SearchUser.jsp</result>
+</action>
+
+<action name="emailsend" class="com.Final.MailAction">
+<result name="success">ConfirmPassword.jsp</result>
+<result name="Error">MailError.jsp</result>
+</action>
+
+<action name="adminemailsend" class="com.Final.AdminMailAction">
+<result name="success">AdminConfirmPassword.jsp</result>
+<result name="Error">MailError.jsp</result>
+</action>
+
+<action name="otpverify" class="com.Final.OtpAction">
+<result name="OtpProcess">ConfirmPass.jsp</result>
+<result name="error">ConfirmPassError.jsp</result>
+</action>
+
+<action name="otpverifys" class="com.Final.OtpAction">
+<result name="OtpProcess">AdminConfirmPass.jsp</result>
+<result name="error">ConfirmPassError.jsp</result>
+</action>
+
+<action name="UpdatePass" class="com.Final.UpdatePassAction">
+<result name="updatepass">ConfirmPass.jsp</result>
+</action>
+
+<action name="UpdatePasss" class="com.Final.AdminUpdatePassAction">
+<result name="updatepass">AdminConfirmPass.jsp</result>
+<result name="error">AdminConfirmPass.jsp</result>
+</action>
+
+<action name="Adminlog">
+<result>/Admin.jsp</result>
+</action>
+
+<action name="adminlogin" class="com.Final.LoginUserAction" method="adminLogin">
+<result name="admin">AdminDashboard.jsp</result>
+<result name="error">Login.jsp</result>
+</action>
+
+<action name="UsersProfile" class="com.Final.ReportAction" method="adminProfile">
+<result name="AdminProfile">UserProfile.jsp</result>
+</action>
+
+<action name="AdminDelete" class="com.Final.DeleteAction">
+<result name="Delete" type="chain">ViewUserList</result>
+</action>
+
+<action name="ViewUserList" class="com.Final.ReportAction" method="adminProfile">
+<result name="AdminProfile">UserProfile.jsp</result>
+</action>
+
+<action name="FullProfile" class="com.Final.UserListAction" method="fullprofile">
+<result name="REPORTS" >FullProfile.jsp</result>
+</action>
+
+
+
+
+</package>
+</struts>
